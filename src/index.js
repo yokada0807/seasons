@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 class App extends React.Component {
 
@@ -43,9 +44,7 @@ class App extends React.Component {
     }
     // return means return. It doesn't go below it. therefore it comes when nothing above is corret. so there is no need to put else statement here
     return (
-      <div>
-        Loading!
-      </div>
+      <Spinner message = "Please allow location sharing" />
     )
 
 
