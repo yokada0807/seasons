@@ -25,15 +25,11 @@ class App extends React.Component {
     console.log('My component will be unmoumted')
   }
 
-
-  // React says we have to define render!! It's called unconditionally. It's called again when the state is changed. 
-  render() {
+  renderContent() {
     console.log("render was called")
     if (this.state.errorMessage && !this.state.lat) {
       return (
-        <div>
-          Error: {this.state.errorMessage}
-        </div>
+        <div>Error: {this.state.errorMessage}</div>
       );
     } else if (!this.state.errorMessage && this.state.lat) {
       console.log(this.state.lat);
@@ -44,11 +40,13 @@ class App extends React.Component {
     }
     // return means return. It doesn't go below it. therefore it comes when nothing above is corret. so there is no need to put else statement here
     return (
-      <Spinner message = "Please allow location sharing" />
+      <Spinner message="Please allow location sharing" />
     )
+  }
 
-
-
+  // React says we have to define render!! It's called unconditionally. It's called again when the state is changed. 
+  render() {
+    return <div className="border red">{this.renderContent()}</div>;
   }
 }
 
